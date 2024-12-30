@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -134,12 +135,13 @@ a {
 
         & button {
             all: unset;
-            background-image: linear-gradient(to bottom, #fff, #ccc);
-            padding: 10px 40px;
+            background-image: linear-gradient(to bottom, orange,rgb(155, 104, 8));
+            padding: 20px 100px;
             border-radius: 2px;
             margin-top: 20px;
             transition: .5s;
-            color: #fff;
+            color: #000 !important;
+            background-color: orange;
         }
 
         & button:hover {
@@ -186,19 +188,22 @@ a {
             justify-content: center;
             height: auto;
             position: relative;
-            left: -100vw;
-            animation: 20s infiniteScroll calc(var(--time) * -2) infinite linear;
+            animation: 20s infiniteScroll infinite linear;
+            transition: .5s;
+        }
+        & li:hover> :not(:hover) {
+            scale: 0.9;
         }
     }
 }
 
 @keyframes infiniteScroll {
     0% {
-        left: -100vw;    
+        left: 0;
     }
 
     100% {
-        left: 1800px;        
+        left: -2000px;
     }
 }
 
@@ -377,7 +382,7 @@ ul {
         }
 
 
-        
+
 
         & .container:hover .button {
             top: -100px;
@@ -688,7 +693,7 @@ footer {
         flex-direction: column !important;
         gap: 7px;
         z-index: 9999;
-        top : 20px;
+        top: 20px;
         left: 20px;
 
         & span {
@@ -702,23 +707,23 @@ footer {
             align-items: center;
             box-shadow: 3px 3px 3px #0001;
         }
-        
+
     }
 
     .burger-button.active {
-        
+
         & span:nth-child(1) {
-        transform: rotate(45deg) translate(10px, 7px);
-        background-color: #fff;
+            transform: rotate(45deg) translate(10px, 7px);
+            background-color: #fff;
         }
 
         & span:nth-child(2) {
-        opacity: 0;
+            opacity: 0;
         }
 
         & span:nth-child(3) {
-        transform: rotate(-45deg) translate(10px, -7px);
-        background-color: #fff;
+            transform: rotate(-45deg) translate(10px, -7px);
+            background-color: #fff;
         }
     }
 
@@ -726,7 +731,7 @@ footer {
     .header {
         width: 100%;
         height: 100vh;
-        background-image: url("img/capa.png");
+        background-image: url("img/portfolioCover--Mobile.jpg");
         background-repeat: none;
         background-size: cover;
         background-position: center;
@@ -735,19 +740,29 @@ footer {
 
 
         & .coluna {
-            width: 100%;
+            width: 90%;
             padding: 20px;
+            background-color: #fff5;
+            height: auto;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 80px;
+            backdrop-filter: blur(10px);
+            align-items: center;
+
         }
 
-        & .coluna h1 {
+        & h1 {
             font-size: 2em;
         }
 
-        & .coluna button {
-            font-size: 1em;
-            padding: 10px 20px;
+        & button {
+            width: 120px !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center !important;
         }
-
     }
 
     .section#about {
@@ -816,6 +831,7 @@ footer {
         padding: 0 8% !important;
         flex-direction: column;
         overflow: hidden;
+
         & .carousel_inner {
             display: flex;
             gap: 20px;
@@ -830,6 +846,7 @@ footer {
             user-select: none;
             width: 100%;
             padding: 20px;
+
             & .card_carousel {
                 width: 100%;
                 padding: 20px;
@@ -842,7 +859,7 @@ footer {
                 justify-content: center;
                 scroll-snap-align: center;
                 transition: .5s;
-                
+
                 & img {
                     width: 100%;
                 }
@@ -863,9 +880,9 @@ footer {
 
             & img {
                 width: 100%;
-            }    
+            }
         }
-    } 
+    }
 
     .section.carousel {
         width: 100%;
@@ -873,6 +890,7 @@ footer {
         padding: 0 8% !important;
         flex-direction: column;
         overflow: hidden;
+
         & .carousel_inner {
             display: flex;
             gap: 20px;
@@ -887,6 +905,7 @@ footer {
             user-select: none;
             width: 100%;
             padding: 20px;
+
             & .card_carousel {
                 width: 100%;
                 padding: 20px;
@@ -899,12 +918,13 @@ footer {
                 justify-content: center;
                 scroll-snap-align: center;
                 transition: .5s;
-                
+
                 & img {
                     width: 100%;
                 }
             }
         }
+
         & .carousel_controls {
             position: relative;
             top: -50%;
@@ -915,7 +935,7 @@ footer {
             align-items: center;
             justify-content: space-between;
             padding: 0 3%;
-    
+
             & button {
                 width: 50px;
                 height: 50px;
@@ -925,14 +945,14 @@ footer {
                 border: none;
                 box-shadow: 5px 5px 5px #00000060;
             }
-    
+
             & button:hover {
                 cursor: pointer;
             }
         }
     }
 
-    .apps   {
+    .apps {
         width: 100%;
         height: 100vh;
         background-image: linear-gradient(to bottom, transparent, #3c94c7, transparent);
